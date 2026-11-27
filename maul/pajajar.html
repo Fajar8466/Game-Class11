@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        header {
+            position: relative;
+            width: 100%;
+            height: 480px;
+        }
+
+        @media (min-width: 640px) {
+            header {
+                height: 520px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            header {
+                height: 600px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            header {
+                height: 680px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            header {
+                height: 720px;
+            }
+        }
+
+        header img.bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.75);
+        }
+
+        nav {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        @media (min-width: 640px) {
+            nav {
+                font-size: 0.875rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                font-size: 1rem;
+            }
+        }
+
+        nav .logo {
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        @media (min-width: 640px) {
+            nav .logo {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            nav .logo {
+                font-size: 1.5rem;
+            }
+        }
+
+        nav ul {
+            display: none;
+            gap: 1.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        @media (min-width: 640px) {
+            nav ul {
+                display: flex;
+            }
+        }
+
+        nav ul li {
+            cursor: pointer;
+            padding-bottom: 0.25rem;
+            color: white;
+        }
+
+        nav ul li.active {
+            border-bottom: 2px solid white;
+        }
+
+        .header-text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.875rem;
+            letter-spacing: 0.05em;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        }
+
+        @media (min-width: 640px) {
+            .header-text {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .header-text {
+                font-size: 3rem;
+            }
+        }
+
+        .header-text .text-normal {
+            font-weight: 400;
+            font-size: 1.25rem;
+            margin-right: 0.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .header-text .text-normal {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .header-text .text-normal {
+                font-size: 2rem;
+            }
+        }
+
+        .header-text .text-bold {
+            font-weight: 800;
+        }
+
+        .header-text .blinking {
+            animation: blink 1s steps(2, start) infinite;
+            margin-left: 0.25rem;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .scroll-icon {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        @media (min-width: 640px) {
+            .scroll-icon {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .scroll-icon {
+                font-size: 1.875rem;
+            }
+        }
+
+        /* About Section */
+        .about-section {
+            max-width: 1120px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .about-section {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 5rem;
+            }
+        }
+
+        .about-section img {
+            width: 18rem;
+            height: 18rem;
+            object-fit: cover;
+            flex-shrink: 0;
+            border-radius: 0.25rem;
+        }
+
+        .about-text {
+            max-width: 40rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .about-tabs {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #6b7280;
+            /* gray-500 */
+        }
+
+        .about-tabs .active {
+            border-bottom: 2px solid #f87171;
+            /* red-400 */
+            color: #f87171;
+            padding-bottom: 0.25rem;
+        }
+
+        .about-text h2 {
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        @media (min-width: 640px) {
+            .about-text h2 {
+                font-size: 1.875rem;
+            }
+        }
+
+        .about-text h2 span {
+            color: #f87171;
+        }
+
+        .about-text p {
+            font-size: 0.75rem;
+            color: #374151;
+            /* gray-700 */
+            margin-bottom: 0.75rem;
+            line-height: 1.25rem;
+        }
+
+        @media (min-width: 640px) {
+            .about-text p {
+                font-size: 0.875rem;
+                line-height: 1.5rem;
+            }
+        }
+
+        .signature {
+            width: 7rem;
+            height: auto;
+        }
+
+        /* Services Section */
+        .services-section {
+            background-color: #f9fafb;
+            /* gray-50 */
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            text-align: center;
+        }
+
+        .services-container {
+            max-width: 1120px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .services-section h3 {
+            font-weight: 800;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        @media (min-width: 640px) {
+            .services-section h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .services-section h3 {
+                font-size: 1.875rem;
+            }
+        }
+
+        .services-section p.subtitle {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-bottom: 3rem;
+            letter-spacing: 0.1em;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 2.5rem 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            color: #374151;
+            font-size: 0.75rem;
+        }
+
+        @media (min-width: 640px) {
+            .services-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                font-size: 0.875rem;
+            }
+        }
+
+        .service-item i {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-item h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .service-item p {
+            max-width: 10rem;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.25rem;
+        }
+
+        /* Recent Work Section */
+        .work-section {
+            max-width: 1120px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        .work-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .work-header h3 {
+            font-weight: 800;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        @media (min-width: 640px) {
+            .work-header h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .work-header h3 {
+                font-size: 1.875rem;
+            }
+        }
+
+        .work-header p.subtitle {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .work-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #374151;
+        }
+
+        .work-filters .active {
+            color: #f87171;
+        }
+
+        .work-grid {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (min-width: 640px) {
+            .work-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        .work-grid img {
+            width: 100%;
+            height: 18rem;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+    </head>
+
+    <body class="bg-white text-gray-900">
+        <header>
+            <img src="PAJAR.JPG"
+                alt="Woman sitting on wooden deck facing a lake with mountains in the background under cloudy sky"
+                class="bg-image" width="1920" height="680" />
+            <nav>
+                <div class="logo">PORICHOY</div>
+                <ul>
+                    <li class="active">HOME</li>
+                    <li>ABOUT</li>
+                    <li>SERVICE</li>
+                    <li>WORK</li>
+                    <li>RESUME</li>
+                    <li>CONTACT</li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <span class="text-normal">I Am</span>
+                <span class="text-bold">Web Designer.</span>
+                <span class="blinking">|</span>
+            </div>
+            <div class="scroll-icon">
+                <i class="fas fa-mouse"></i>
+            </div>
+        </header>
+
+        <section class="about-section">
+            <img src="otd.jpg"
+                alt="Portrait of a woman in a light pink top with hand on chin posing against a pink background"
+                width="320" height="320" />
+            <div class="about-text">
+                <div class="about-tabs">
+                    <span class="active">About</span>
+                    <span>Skills</span>
+                </div>
+                <h2>Hi There! I'm <span>FAJAR MAULANA AKBAR</span></h2>
+                <p>
+                    suka bermaen game, dan suka bermaen futsal, dan itu aku suka banget dan,
+                    suka bermaen ps3 dan 4 yang saya maen di ps 3 dan 4 maen bola bersama temen temen saya.
+                </p>
+                <p>
+                    saya suka jalan jalan bersama temen temen saya, dan nyari tempat bagus bagus
+                    buat foto foto di tempat bagus bagus.
+                </p>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="services-container">
+                <h3>MY HOBI</h3>
+                <p class="subtitle">sehari hari</p>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <i class="fas fa-code"></i>
+                        <h4>futsal</h4>
+                        <p>suka turnamen bersama tim sekolah, dan ama tim akademi di luar.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <h4>bermaen game</h4>
+                        <p>suka bermaen game apa aja yang saya suka langsung instal game yang suka.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-user-tie"></i>
+                        <h4>motor costum</h4>
+                        <p>saya dari kecil udah di ajak maen costum ama abang saya sendiri jadi saya demen maen costum.
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-cogs"></i>
+                        <h4>jual beli barang</h4>
+                        <p>saya punya usaha kecil kecilan jual beli barang yang saya suka.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h4>raket</h4>
+                        <p>saya juga suka ama olah raga ini karena almarhum ayah saya suka bermaen raket.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-headset"></i>
+                        <h4>layangan</h4>
+                        <p>kalo sore suka maen layangan setiap pulang sekolah.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="work-section">
+            <div class="work-header">
+                <h3>WORK IN A MY LIFE.</h3>
+                <p class="subtitle">LATEST PROJECTS</p>
+                <div class="work-filters">
+                    <span class="active cursor-pointer">ALL</span>
+                    <span class="cursor-pointer">MEDIA</span>
+                    <span class="cursor-pointer">ILLUSTRATION</span>
+                    <span class="cursor-pointer">BRANDING</span>
+                </div>
+            </div>
+            <div class="work-grid">
+                <img src="futsal.jpg" alt="" width="400" height="288" />
+                <img src="LARII.JPG" alt="" width="400" height="288" />
+                <img src="COPER.JPG" alt="" width="400" height="288" />
+                <img src="BERITIS.JPG" alt="" width="400" height="288" />
+                <img src="MESIN.JPG" alt="" width="400" height="288" />
+                <img src="MOBIL.JPG" alt="" width="400" height="288" />
+            </div>
+        </section>
+    </body>
+
+</html>
