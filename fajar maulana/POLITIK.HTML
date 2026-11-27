@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Berita Politik Indonesia</title>
+    <style>
+        /* Reset dan dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fafafa;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #76f9fd;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Kontainer utama */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #72f9fd;
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+            font-weight: 700;
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 8px rgba(198, 40, 40, 0.7);
+        }
+
+        /* Navigasi */
+        nav {
+            background: rgb(125, 255, 255);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 35px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav li {
+            margin: 0 18px;
+        }
+
+        nav li a {
+            display: inline-block;
+            padding: 14px 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-bottom: 3px solid transparent;
+            transition: border-color 0.3s ease;
+            color: #ffffff;
+        }
+
+        nav li a:hover,
+        nav li a.active {
+            border-bottom-color: #71eeff;
+        }
+
+        /* Grid Berita */
+        .berita {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .berita-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 7px 18px rgba(198, 40, 40, 0.12);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .berita-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 26px rgba(190, 40, 40, 0.25);
+        }
+
+        .berita-gambar {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .berita-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .berita-judul {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #7bfbff;
+            margin-bottom: 10px;
+        }
+
+        .berita-deskripsi {
+            flex: 1;
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 14px;
+        }
+
+        .berita-tanggal {
+            font-size: 0.85rem;
+            color: #666;
+            align-self: flex-end;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #78eef7;
+            color: #f0f0f0;
+            text-align: center;
+            padding: 18px 10px;
+            margin-top: 50px;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header {
+                font-size: 1.9rem;
+                padding: 18px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        Berita Politik Indonesia
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="HOME.html">Home</a></li>
+            <li><a href="LAYANAN.html">Layanan</a></li>
+            <li><a href="POLITIK.html" class="active">Politik</a></li>
+            <li><a href="PRODUK.html">Produk</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="berita">
+            <a href="kampanye.html" class="berita-item" style="text-decoration: none; color: inherit;">
+                <img src="pemilu.jpg" alt="Kampanye Politik" class="berita-gambar" />
+                <div class="berita-content">
+                    <h3 class="berita-judul">Kampanye Pemilu Memanas di Berbagai Daerah</h3>
+                    <p class="berita-deskripsi">Calon legislatif berlomba menyampaikan visi dan misi di tengah ramainya pemilih muda.</p>
+                    <div class="berita-tanggal">Dipublikasikan: 25 April 2024</div>
+                </div>
+            </a>
+
+            <a href="rapat.html" class="berita-item" style="text-decoration: none; color: inherit;">
+                <img src="ruu.jpg" alt="Rapat Parlemen" class="berita-gambar" />
+                <div class="berita-content">
+                    <h3 class="berita-judul">Rapat Parlemen Bahas RUU Strategis</h3>
+                    <p class="berita-deskripsi">Anggota DPR menggelar debat hangat terkait usulan Rancangan Undang-Undang yang akan membentuk masa depan bangsa.</p>
+                    <div class="berita-tanggal">Dipublikasikan: 22 April 2024</div>
+                </div>
+            </a>
+
+            <a href="diplomasi.html" class="berita-item" style="text-decoration: none; color: inherit;">
+                <img src="asean.jpg" alt="Diplomasi Internasional" class="berita-gambar" />
+                <div class="berita-content">
+                    <h3 class="berita-judul">Diplomasi Indonesia Memperkuat Hubungan ASEAN</h3>
+                    <p class="berita-deskripsi">pertemuan penting berlangsung untuk meningkatkan kerjasama di bidang ekonomi dan keamanan regional.</p>
+                    <div class="berita-tanggal">Dipublikasikan: 20 April 2024</div>
+                </div>
+            </a>
+
+            <a href="opini.html" class="berita-item" style="text-decoration: none; color: inherit;">
+                <img src="digital.jpg" alt="Opini Politik" class="berita-gambar" />
+                <div class="berita-content">
+                    <h3 class="berita-judul">Opini: Tantangan Demokrasi di Era Digital</h3>
+                    <p class="berita-deskripsi">komentar dari pakar politik mengenai perubahan lanskap demokrasi yang di picu oleh teknologi dan media sosial>
+                    <div class="berita-tanggal">Dipublikasikan: 18 April 2024</div>
+                </div>
+            </a>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2024 Berita Politik Indonesia. Semua hak cipta dilindungi.
+    </footer>
+</body>
+
+</html>
+

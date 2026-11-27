@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #74ecf5;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            letter-spacing: 1.5px;
+        }
+
+        nav {
+            background-color: #79f9fd;
+            padding: 12px 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #80cbc4;
+        }
+
+        main {
+            flex: 1;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        article {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgb(0 0 0 / 0.1);
+            padding: 20px;
+        }
+
+        article h2 {
+            font-size: 1.5rem;
+            color: #74f5f5;
+            margin-bottom: 10px;
+        }
+
+        article img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        article p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        footer {
+            background-color: #76ecfc;
+            color: white;
+            text-align: center;
+            padding: 15px 20px;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header img {
+                margin: 0 0 10px 0;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            main {
+                padding: 0 10px;
+            }
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <header>
+            <img src="https://cdn-icons-png.flaticon.com/512/2948/2948696.png" alt="Logo Pelayanan Kesehatan" />
+            <h1>Pelayanan Kesehatan</h1>
+        </header>
+
+        <nav>
+            <a href="HOME.html">Home</a>
+            <a href="LAYANAN.html">Layanan</a>
+            <a href="POLITIK.html">Politik</a>
+            <a href="PRODUK.html">Produk</a>
+        </nav>
+
+        <main>
+            <article>
+                <h2>Pelayanan Kesehatan Berkualitas untuk Masyarakat</h2>
+                <img src="jpg.KESEHATAN.jpg" alt="Pelayanan Kesehatan">
+                <p>Kami berkomitmen untuk menyediakan akses kesehatan berkualitas bagi masyarakat. Dengan fasilitas
+                    lengkap dan tenaga medis profesional, kami siap memberikan layanan terbaik untuk semua usia.</p>
+                <p>Di tengah pandemi, kami juga menyediakan layanan vaksinasi untuk meningkatkan imunitas masyarakat.
+                    Vaksinasi ini dilakukan di berbagai lokasi untuk memudahkan akses bagi semua orang.</p>
+                <p>Selain itu, kami juga mengadakan program pemeriksaan kesehatan gratis secara berkala, yang bertujuan
+                    untuk mendeteksi penyakit sejak dini dan memberikan penanganan yang tepat.</p>
+                <p>Dengan berbagai layanan yang kami tawarkan, kami berharap dapat meningkatkan kualitas hidup
+                    masyarakat dan menciptakan lingkungan yang lebih sehat.</p>
+            </article>
+        </main>
+
+        <footer>
+            &copy; 2024 Pelayanan Kesehatan. Semua hak cipta dilindungi.
+        </footer>
+
+    </body>
+
+</html>

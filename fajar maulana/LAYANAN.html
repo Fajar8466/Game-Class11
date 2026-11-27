@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Layanan Masyarakat</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #74ecf5;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            letter-spacing: 1.5px;
+        }
+
+        nav {
+            background-color: #79f9fd;
+            padding: 12px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #80cbc4;
+        }
+
+        main {
+            flex: 1;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgb(0 0 0 / 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgb(0 0 0 / 0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-content h2 {
+            font-size: 1.3rem;
+            margin: 0 0 10px 0;
+            color: #74f5f5;
+        }
+
+        .card-content p {
+            flex-grow: 1;
+            margin: 0 0 20px 0;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        footer {
+            background-color: #76ecfc;
+            color: white;
+            text-align: center;
+            padding: 15px 20px;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header img {
+                margin: 0 0 10px 0;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            main {
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="https://cdn-icons-png.flaticon.com/512/2948/2948696.png" alt="Logo Layanan Masyarakat" />
+        <h1>Layanan Masyarakat</h1>
+    </header>
+
+    <nav>
+        <a href="HOME.html">Home</a>
+        <a href="LAYANAN.html">Layanan</a>
+        <a href="POLITIK.html">Politik</a>
+        <a href="PRODUK.html">Produk</a>
+        <input type="text" placeholder="Search..." />
+    </nav>
+
+    <main>
+        <section class="card">
+            <a href="kesehatan.html">
+                <img src="jpg.KESEHATAN.jpg" alt="Pelayanan Kesehatan">
+                <div class="card-content">
+                    <h2>Pelayanan Kesehatan</h2>
+                    <p>Kami menyediakan akses kesehatan berkualitas bagi masyarakat dengan fasilitas lengkap, tenaga medis
+                        profesional, dan layanan vaksinasi untuk semua usia.</p>
+                </div>
+            </a>
+        </section>
+
+        <section class="card">
+            <a href="fasilitas.html">
+                <img src="fasilitas.jpg" alt="Fasilitas Pendidikan" />
+                <div class="card-content">
+                    <h2>Fasilitas Pendidikan</h2>
+                    <p>Mendukung pendidikan anak dan dewasa melalui sekolah gratis, pelatihan keterampilan, dan program
+                        beasiswa supaya semua generasi dapat belajar dan berkembang.</p>
+                </div>
+            </a>
+        </section>
+
+        <section class="card">
+            <a href="transportasi.html">
+                <img src="fasilitas umum.jpg" alt="Transportasi Umum" />
+                <div class="card-content">
+                    <h2>Transportasi Umum</h2>
+                    <p>Meningkatkan kenyamanan dan keamanan transportasi umum dengan jadwal yang jelas, rute terjangkau,
+                        serta fasilitas ramah disabilitas di seluruh kota.</p>
+                </div>
+            </a>
+        </section>
+
+        <section class="card">
+            <a href="publik.html">
+                <img src="jpg.PUBLIK.jpg" alt="Pelayanan Publik" />
+                <div class="card-content">
+                    <h2>Pelayanan Publik</h2>
+                    <p>Menyediakan kemudahan akses administrasi kependudukan, perizinan, dan layanan pengaduan dengan
+                        transparansi dan kecepatan proses untuk kenyamanan masyarakat.</p>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 Layanan Masyarakat. Semua hak cipta dilindungi.
+    </footer>
+
+</body>
+
+</html>
